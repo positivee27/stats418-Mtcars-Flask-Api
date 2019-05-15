@@ -14,6 +14,8 @@ First, change your directory to the `docker` folder and run below conmand line i
 
 `docker-compose up --build`
 
+Once you see something like below, you are good to move forward to next step!
+```
 Starting docker_flask_1 ... done
 Attaching to docker_flask_1
 flask_1  |  * Serving Flask app "server" (lazy loading)
@@ -27,7 +29,7 @@ flask_1  |  * Debugger is active!
 flask_1  |  * Debugger PIN: 297-591-220
 flask_1  | 172.20.0.1 - - [15/May/2019 19:58:05] "GET / HTTP/1.1" 200 -
 flask_1  | 172.20.0.1 - - [15/May/2019 20:03:47] "POST /mpg HTTP/1.1" 200 -
-
+```
 ## Step 2
 
 
