@@ -32,21 +32,22 @@ flask_1  | 172.20.0.1 - - [15/May/2019 20:03:47] "POST /mpg HTTP/1.1" 200 -
 ```
 ## Step 2
 
-
-
-
-This is a more advanced example of an actual model deployed locally through a Flask API. The environment again is created through a docker-compose command, that again references the corresponding Dockerfile and requirements.txt file.
-
-First as usual you will need to sync your repo to pull the new files. To run this API, change your directory to the docker folder and run:
-
-docker-compose up
-
 If it has created the localhost server correctly you will not get your prompt back. You will need to open a new terminal (be in the same directory) and run the following curl command to get a response
 
-curl http://localhost:5000/
+`curl http://localhost:5000/`
 
-Finally, let's test out some predictions. If you open the prediction.py script you can see that the inputs into the model are "grade", "lat", "long", "sqft_living", "waterfront" and "yr_built". We will pass these through a json formatted input through a curl POST request to the API. This is done as
+you will get a response as 
 
-curl -H "Content-Type: application/json" -X POST -d '{"grade":"10.0","lat":"47.5396","long":"-122.073","sqft_living":"4495.0","waterfront":"0.0","yr_built":"2007.0"}' "http://localhost:5000/predict_price"
+`The server is up!!!`
 
-You can change some of the values to see the prediction change. Both of the curl commands can be found in the file curl_test.sh. To stop your server running the API, type ctrl-C. As usual, check to see if you have any docker containers running using docker container ls and stop them through docker container kill <container-name>
+## Step 3
+
+The most exciting part is to get the prediction value! In order to get that 
+
+`curl -H "Content-Type: application/json" -X POST -d '{"disp":"160.0", "hp":"110", "dart":"3.90", "wt":"2.620", "qsec":"16.46"}' "http://localhost:5000/mpg" `
+
+## Ending 
+
+You may repeat the `step 4` for different input and get the result. Once you are done with this API, to exit your server runing the API, press ctrl-C in your first terminal window. To close your running docker, you could run `docker container ls` and stop any image through `docker container kill <container-name>`  
+
+
